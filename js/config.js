@@ -4,7 +4,7 @@ const portfolioConfig = {
     email: "shivamyadav00209@gmail.com",
     linkedin: "https://www.linkedin.com/in/shivamyadav-dev/",
     github: "https://github.com/shivamyadav-dev",
-    resumeUrl: "assets/Resume.pdf",
+    resumeUrl: "assets/Shivam_Kumar_Yadav_Resume.pdf",
     tagline: "Turning Data into Intelligent and Autonomous Action",
     hero: {
         titles: [
@@ -50,26 +50,26 @@ const portfolioConfig = {
     ],
     projects: [
         {
-            title: "AI Agent Framework",
-            description: "Multi-agent system for autonomous task execution",
-            github: "https://github.com/shivamyadav-dev",
-            demo: "https://www.linkedin.com/in/shivamyadav-dev/",
-            tech: ["Python", "LangChain", "OpenAI"]
+            title: "Global Translator",
+            description: "A sleek Streamlit app that translates text into 100+ languages with instant audio playback and download.",
+            github: "https://github.com/shivamyadav-dev/A-Journey-Of-Data-Science/tree/main/Artificial%20Intelligence/Global%20Translator",
+            demo: "https://www.linkedin.com/posts/shivamyadav-dev_streamlit-python-projectshowcase-activity-7391002009648246784--pGH?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtWArIBeVY85WeieS8NmNOSLzMXVpqpK0Q",
+            tech: ["Streamlit", "mtranslate", "gTTS"]
         },
         {
-            title: "Generative AI Platform",
-            description: "End-to-end platform for content generation",
-            github: "https://github.com/shivamyadav-dev",
+            title: "Cryptocurrency Market Forecasting System",
+            description: "A Streamlit app that predicts the next-day Bitcoin price using a Random Forest model trained on multi-crypto market data.",
+            github: "https://github.com/shivamyadav-dev/A-Journey-Of-Data-Science/tree/main/Machine%20Learning/Cryptocurrency%20Market%20Forecasting%20System",
             demo: "https://www.linkedin.com/in/shivamyadav-dev/",
-            tech: ["Python", "FastAPI", "React"]
+            tech: ["Python", "Streamlit", "scikit-learn"]
         },
         {
-            title: "Data Pipeline Orchestrator",
-            description: "Scalable ETL pipeline with real-time processing",
-            github: "https://github.com/shivamyadav-dev",
-            demo: "https://www.linkedin.com/in/shivamyadav-dev/",
-            tech: ["Python", "Apache Airflow", "PostgreSQL"]
-        },
+            title: "Financial Risk Analytics Platform",
+            description: "A Streamlit-based ML app that predicts whether a loan will be approved using a Logistic Regression model trained on applicant financial and demographic data.",
+            github: "https://github.com/shivamyadav-dev/A-Journey-Of-Data-Science/tree/main/Machine%20Learning/Financial%20Risk%20Analytics%20Platform",
+            demo: "https://www.linkedin.com/posts/shivamyadav-dev_machinelearning-datascience-python-activity-7389907344857526272-B1es?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtWArIBeVY85WeieS8NmNOSLzMXVpqpK0Q",
+            tech: ["Python", "scikit-learn", "Pandas","NumPy"]
+        },/*
         {
             title: "ML Model Deployment",
             description: "Production-ready ML serving infrastructure",
@@ -97,7 +97,7 @@ const portfolioConfig = {
             github: "https://github.com/shivamyadav-dev",
             demo: "https://www.linkedin.com/in/shivamyadav-dev/",
             tech: ["Python", "Streamlit", "gTTS"]
-        }
+        }*/
     ],
     certifications: [
         {
@@ -113,7 +113,7 @@ const portfolioConfig = {
             pdfUrl: "assets/ISRO.pdf"
         },
         {
-            name: "Deloitte Data Analytics",
+            name: "Deloitte Job Simulation",
             pdfUrl: "assets/deloitte.pdf"
         },
         {
@@ -131,6 +131,22 @@ const portfolioConfig = {
         {
             name: "Udemy Data Science",
             pdfUrl: "assets/Data_Science.pdf"
+        },
+        {
+            name: "Machine Learning Internship",
+            pdfUrl: "assets/Machine Learning Internship.pdf"
+        },
+        {
+            name: "NSS C certificate",
+            pdfUrl: "assets/nss c certificate.pdf"
+        },
+        {
+            name: "NSS B certificate",
+            pdfUrl: "assets/b certificate .pdf"
+        },
+        {
+            name: "Badminton",
+            pdfUrl: "assets/badminton .pdf"
         }
     ],
     emailjs: {
