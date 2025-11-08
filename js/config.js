@@ -135,8 +135,8 @@ const portfolioConfig = {
     ],
     emailjs: {
         serviceId: "service_af2t7vv", // EmailJS service ID
-        templateId: "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
-        publicKey: "YOUR_PUBLIC_KEY" // Replace with your EmailJS public key
+        templateId: "template_o3xk1xs", // EmailJS template ID
+        publicKey: "PCZMY0zjvZs6hVSL-" // EmailJS public key
     }
 };
 
