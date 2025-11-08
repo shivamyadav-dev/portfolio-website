@@ -153,6 +153,9 @@ const portfolioConfig = {
         serviceId: "service_af2t7vv", // EmailJS service ID
         templateId: "template_o3xk1xs", // EmailJS template ID
         publicKey: "PCZMY0zjvZs6hVSL-" // EmailJS public key
+    },
+    web3forms: {
+        accessKey: 'c6146f14-269c-4345-a1ad-898af8d43af8'
     }
 };
 

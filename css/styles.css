@@ -1017,6 +1017,19 @@ body {
     overflow-wrap: break-word;
 }
 
+.contact-note {
+    background: rgba(56, 189, 248, 0.1);
+    border-left: 3px solid var(--color-cyan);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.contact-note strong {
+    color: var(--color-cyan);
+}
+
 .social-links {
     display: flex;
     gap: 1rem;

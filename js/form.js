@@ -104,38 +104,48 @@ class ContactForm {
         };
         
         try {
-            // Check if EmailJS is fully configured
-            const emailjsConfig = window.portfolioConfig?.emailjs;
-            const isEmailJSConfigured = 
-                emailjsConfig?.serviceId && 
-                emailjsConfig.serviceId !== 'YOUR_SERVICE_ID' &&
-                emailjsConfig?.templateId && 
-                emailjsConfig.templateId !== 'YOUR_TEMPLATE_ID' &&
-                emailjsConfig?.publicKey && 
-                emailjsConfig.publicKey !== 'YOUR_PUBLIC_KEY' &&
-                typeof emailjs !== 'undefined';
-            
-            if (isEmailJSConfigured) {
-                await this.sendViaEmailJS(formData);
+            // Prefer Web3Forms if configured
+            const web3formsConfig = window.portfolioConfig?.web3forms;
+            const hasWeb3Forms = web3formsConfig?.accessKey && web3formsConfig.accessKey !== 'YOUR_ACCESS_KEY';
+
+            if (hasWeb3Forms) {
+                await this.sendViaWeb3Forms(formData);
             } else {
-                // Fallback to mailto when EmailJS is not fully configured
-                this.sendViaMailto(formData);
+                // Check if EmailJS is configured
+                const emailjsConfig = window.portfolioConfig?.emailjs;
+                const isEmailJSConfigured = 
+                    emailjsConfig?.serviceId && 
+                    emailjsConfig?.templateId && 
+                    emailjsConfig?.publicKey && 
+                    typeof emailjs !== 'undefined';
+                
+                if (isEmailJSConfigured) {
+                    await this.sendViaEmailJS(formData);
+                } else {
+                    // Fallback to mailto when neither Web3Forms nor EmailJS is configured
+                    this.sendViaMailto(formData);
+                }
             }
         } catch (error) {
             console.error('Error sending email:', error);
             
             // Provide more helpful error messages
-            let errorMessage = 'Error sending message. Please try again or use the email link above.';
+            let errorMessage = 'Error sending message. ';
             
             if (error?.text) {
                 // EmailJS specific error
-                errorMessage = `Email service error: ${error.text}. Please use the email link above.`;
+                errorMessage += `EmailJS Error: ${error.text}. `;
             } else if (error?.message) {
                 // General error with message
-                errorMessage = `Error: ${error.message}. Please use the email link above.`;
+                errorMessage += `Error: ${error.message} `;
             }
             
+            errorMessage += `Please check your EmailJS template configuration in the dashboard, or email me directly at ${window.portfolioConfig.email}`;
+            
             this.showFormMessage(errorMessage, 'error');
+            
+            // Also log to console for debugging
+            console.error('Full error object:', error);
         } finally {
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalText;
@@ -144,6 +154,7 @@ class ContactForm {
     
     async sendViaEmailJS(formData) {
         const config = window.portfolioConfig.emailjs;
+        const recipientEmail = window.portfolioConfig.email;
         
         // Validate EmailJS configuration
         if (!config.serviceId || !config.templateId || !config.publicKey) {
@@ -158,31 +169,95 @@ class ContactForm {
             throw new Error('Failed to initialize email service');
         }
         
+        // Prepare template parameters - these must match your EmailJS template variables
+        const templateParams = {
+            to_name: window.portfolioConfig.name, // Your name
+            to_email: recipientEmail, // Your email address
+            from_name: formData.name, // Sender's name
+            from_email: formData.email, // Sender's email
+            message: formData.message, // Message content
+            reply_to: formData.email, // Reply-to email
+            subject: `Portfolio Contact: Message from ${formData.name}`, // Email subject
+            user_email: formData.email, // Alternative variable name
+            user_name: formData.name, // Alternative variable name
+            user_message: formData.message // Alternative variable name
+        };
+        
+        // Log for debugging
+        console.log('Sending email via EmailJS:', {
+            serviceId: config.serviceId,
+            templateId: config.templateId,
+            recipient: recipientEmail,
+            templateParams: templateParams
+        });
+        
         // Send email via EmailJS
         try {
             const response = await emailjs.send(
                 config.serviceId,
                 config.templateId,
-                {
-                    from_name: formData.name,
-                    from_email: formData.email,
-                    message: formData.message,
-                    to_email: window.portfolioConfig.email,
-                    reply_to: formData.email
-                }
+                templateParams
             );
             
             // Check if send was successful
-            if (response.status === 200) {
-                this.showFormMessage('Message sent successfully! I\'ll get back to you soon.', 'success');
+            if (response.status === 200 || response.status === 201) {
+                console.log('Email sent successfully:', response);
+                this.showFormMessage(
+                    'Message sent successfully!', 
+                    'success'
+                );
                 this.form.reset();
             } else {
                 throw new Error(`Email service returned status: ${response.status}`);
             }
         } catch (sendError) {
-            console.error('EmailJS send error:', sendError);
-            // Re-throw with more context
-            throw new Error(sendError.text || sendError.message || 'Failed to send email');
+            console.error('EmailJS send error details:', {
+                error: sendError,
+                status: sendError.status,
+                text: sendError.text,
+                message: sendError.message
+            });
+            
+            // Provide more detailed error information
+            let errorMessage = 'Failed to send email. ';
+            if (sendError.text) {
+                errorMessage += `Error: ${sendError.text}. `;
+            }
+            errorMessage += `Please check your EmailJS template configuration or email me directly at ${recipientEmail}`;
+            
+            throw new Error(errorMessage);
+        }
+    }
+    
+    async sendViaWeb3Forms(formData) {
+        const accessKey = window.portfolioConfig?.web3forms?.accessKey;
+        if (!accessKey || accessKey === 'YOUR_ACCESS_KEY') {
+            throw new Error('Web3Forms access key is missing');
+        }
+
+        const payload = {
+            access_key: accessKey,
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            subject: `Portfolio Contact: Message from ${formData.name}`
+        };
+
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+        if (data.success) {
+            this.showFormMessage('Message sent successfully!', 'success');
+            this.form.reset();
+        } else {
+            throw new Error(data.message || 'Failed to send via Web3Forms');
         }
     }
     
