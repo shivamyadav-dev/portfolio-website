@@ -275,5 +275,30 @@
     <script src="js/modal.js"></script>
     <script src="js/form.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- Visitor Notification System -->
+    <script>
+        (function() {
+            // Replace this URL with your Cloudflare Worker URL after deployment
+            const WORKER_URL = 'https://fragrant-silence-bc38.shivamofficial2120.workers.dev/';
+            
+            // Send visitor notification
+            fetch(WORKER_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    page: window.location.href,
+                    referrer: document.referrer || 'Direct',
+                    userAgent: navigator.userAgent,
+                    timestamp: new Date().toISOString()
+                })
+            }).catch(err => {
+                // Silently fail - don't break the site if the worker is down
+                console.debug('Visitor tracking failed:', err);
+            });
+        })();
+    </script>
 </body>
 </html>
