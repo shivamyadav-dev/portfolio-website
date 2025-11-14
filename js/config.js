@@ -60,9 +60,10 @@ const portfolioConfig = {
             title: "Live Webcam Face and Eye Tracking",
             description: "Built a real-time face and eye detection application using Python, OpenCV, and Haar Cascades to process a live webcam feed.",
             github: "https://github.com/shivamyadav-dev/A-Journey-Of-Data-Science/tree/main/Computer%20Vision/real_time_face%26eye_detection",
-            demo: "https://www.linkedin.com/in/shivamyadav-dev/",
+            demo: "https://www.linkedin.com/posts/shivamyadav-dev_computervision-opencv-python-ugcPost-7395002366296489984-18SS?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtWArIBeVY85WeieS8NmNOSLzMXVpqpK0Q",
             tech: ["Python", "OpenCV(cv2)", "Haar Cascade"]
         },
+        
         {
             title: "Financial Risk Analytics Platform",
             description: "A Streamlit-based ML app that predicts whether a loan will be approved using a Logistic Regression model trained on applicant financial and demographic data.",
