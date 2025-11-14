@@ -57,11 +57,11 @@ const portfolioConfig = {
             tech: ["Streamlit", "mtranslate", "gTTS"]
         },
         {
-            title: "Cryptocurrency Market Forecasting System",
-            description: "A Streamlit app that predicts the next-day Bitcoin price using a Random Forest model trained on multi-crypto market data.",
-            github: "https://github.com/shivamyadav-dev/A-Journey-Of-Data-Science/tree/main/Machine%20Learning/Cryptocurrency%20Market%20Forecasting%20System",
+            title: "Live Webcam Face and Eye Tracking",
+            description: "Built a real-time face and eye detection application using Python, OpenCV, and Haar Cascades to process a live webcam feed.",
+            github: "https://github.com/shivamyadav-dev/A-Journey-Of-Data-Science/tree/main/Computer%20Vision/real_time_face%26eye_detection",
             demo: "https://www.linkedin.com/in/shivamyadav-dev/",
-            tech: ["Python", "Streamlit", "scikit-learn"]
+            tech: ["Python", "OpenCV(cv2)", "Haar Cascade"]
         },
         {
             title: "Financial Risk Analytics Platform",
