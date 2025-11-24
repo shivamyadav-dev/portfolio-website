@@ -50,6 +50,13 @@ const portfolioConfig = {
     ],
     projects: [
         {
+            title: "Restaurant Review Sentiment Analyzer",
+            description: "Production-ready NLP sentiment classifier that analyzes restaurant reviews with 75.2% accuracy—no APIs, no GPUs, pure scikit-learn.",
+            github: "https://github.com/shivamyadav-dev/A-Journey-Of-Data-Science/tree/main/Artificial%20Intelligence/Customer%20feedback%20analysis",
+            demo: "https://www.linkedin.com/posts/shivamyadav-dev_machinelearning-nlp-sentimentanalysis-ugcPost-7398663117469114368-16kg?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtWArIBeVY85WeieS8NmNOSLzMXVpqpK0Q",
+            tech: ["Streamlit", "scikit-learn", "NLTK"]
+        },
+        {
             title: "Global Translator",
             description: "A sleek Streamlit app that translates text into 100+ languages with instant audio playback and download.",
             github: "https://github.com/shivamyadav-dev/A-Journey-Of-Data-Science/tree/main/Artificial%20Intelligence/Global%20Translator",
