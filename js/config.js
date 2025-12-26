@@ -4,7 +4,7 @@ const portfolioConfig = {
     email: "shivamyadav00209@gmail.com",
     linkedin: "https://www.linkedin.com/in/shivamyadav-dev/",
     github: "https://github.com/shivamyadav-dev",
-    resumeUrl: "assets/Shivam_Kumar_Yadav_Resume.pdf",
+    resumeUrl: "assets/SHIVAM_RESUME.pdf",
     tagline: "Turning Data into Intelligent and Autonomous Action",
     hero: {
         titles: [
@@ -28,27 +28,60 @@ const portfolioConfig = {
     },
     skills: [
         {
-            category: "Machine Learning & Deep Learning",
-            items: ["TensorFlow", "PyTorch", "Scikit-learn", "Keras", "XGBoost"]
+            category: "AI & Machine Learning Frameworks",
+            items: ["PyTorch", "TensorFlow", "scikit-learn", "Keras", "XGBoost", "LightGBM","Hugging Face Transformers"]
         },
         {
-            category: "Generative AI & LLMs",
-            items: ["LangChain", "OpenAI API", "Hugging Face", "Stable Diffusion", "RAG"]
+            category: "Generative AI & LLM Stack",
+            items: ["LangChain","RAG Systems","LLaMA","OpenAI GPT","Fine-Tuning","Prompt Engineering","OpenRouter"]
         },
         {
-            category: "Agentic AI Systems",
-            items: ["AutoGPT", "LangGraph", "CrewAI", "Agent Frameworks", "Multi-Agent Systems"]
+            category: "Agentic AI & Orchestration",
+            items: ["CrewAI","n8n","Agentic Workflows","Multi-Agent Systems","Tool-Use Integration"]
         },
         {
-            category: "Data & Analytics",
-            items: ["SQL", "NoSQL", "Data Analytics", "Natural Language Processing", "Python"]
+            category: "Deep Learning Architectures",
+            items: ["CNN","RNN","LSTM","Transfer Learning","YOLO","Computer Vision"]
+        },
+        {
+            category: "NLP & Text Processing",
+            items: ["SpaCy","NLTK","TF-IDF","Transformers","Sentiment Analysis","Text Classification"]
+        },
+        {
+            category: "Data Engineering & Analytics",
+            items: ["Python","SQL","MySQL","Pandas","Numpy","SciPy","Statistical Modeling","Time Series Analysis"]
         },
         {
             category: "MLOps & Deployment",
-            items: ["MLflow", "FastAPI", "CI/CD"]
+            items: ["MLflow","GitHub","GitHub Copilot","Flask","Streamlit","Model Versioning","CI/CD Pipelines"]
+        },
+        {
+            category: "Cloud & Visualization",
+            items: ["MS Azure","Power BI","Tableau","Matplotlib","Seaborn"]
         }
     ],
     projects: [
+        {
+            title: "Enterprise Contract Intelligence Platform | LegalTech",
+            description: "RAG-powered legal AI reducing M&A contract review from 4+ hours to 2 minutes with 95%+ accuracy using LangChain, ChromaDB, and cited clause extraction",
+            github: "https://github.com/shivamyadav-dev/AskMyDocs",
+            demo: "https://www.linkedin.com/posts/shivamyadav-dev_machinelearning-nlp-sentimentanalysis-ugcPost-7398663117469114368-16kg?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtWArIBeVY85WeieS8NmNOSLzMXVpqpK0Q",
+            tech: ["RAG Systems", "LangChain", "ChromaDB", "LLaMA-3", "Production NLP"]
+        },
+        {
+            title: "Strategic Intelligence Automation System | Market Research",
+            description: "Multi-agent platform automating competitive intelligence 96x faster—LangGraph orchestration transforms 8-12 hour research into 5-minute strategic reports",
+            github: "https://github.com/shivamyadav-dev/Atlas-Research-Assistant",
+            demo: "https://www.linkedin.com/posts/shivamyadav-dev_machinelearning-nlp-sentimentanalysis-ugcPost-7398663117469114368-16kg?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtWArIBeVY85WeieS8NmNOSLzMXVpqpK0Q",
+            tech: ["Multi-Agent AI", "LangGraph", "Gemini 2.0", "Autonomous Workflows"]
+        },
+        {
+            title: "Medical Accessibility AI Platform | HealthTech",
+            description: "Computer vision system preventing medication errors for 200M+ non-English speakers via instant medical document translation and OCR across 100+ languages",
+            github: "https://github.com/shivamyadav-dev/Gemini_Vision_Analysis",
+            demo: "https://www.linkedin.com/posts/shivamyadav-dev_visionai-geminiai-telugu-activity-7409454069397921792-rxkI?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtWArIBeVY85WeieS8NmNOSLzMXVpqpK0Q",
+            tech: ["Computer Vision","Gemini Vision API", "Multi-Language AI", "Healthcare Compliance"]
+        },
         {
             title: "Restaurant Review Sentiment Analyzer",
             description: "Production-ready NLP sentiment classifier that analyzes restaurant reviews with 75.2% accuracy—no APIs, no GPUs, pure scikit-learn.",
@@ -70,14 +103,15 @@ const portfolioConfig = {
             demo: "https://www.linkedin.com/posts/shivamyadav-dev_computervision-opencv-python-ugcPost-7395002366296489984-18SS?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtWArIBeVY85WeieS8NmNOSLzMXVpqpK0Q",
             tech: ["Python", "OpenCV(cv2)", "Haar Cascade"]
         },
-        
+        /* 
         {
             title: "Financial Risk Analytics Platform",
             description: "A Streamlit-based ML app that predicts whether a loan will be approved using a Logistic Regression model trained on applicant financial and demographic data.",
             github: "https://github.com/shivamyadav-dev/A-Journey-Of-Data-Science/tree/main/Machine%20Learning/Financial%20Risk%20Analytics%20Platform",
             demo: "https://www.linkedin.com/posts/shivamyadav-dev_machinelearning-datascience-python-activity-7389907344857526272-B1es?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtWArIBeVY85WeieS8NmNOSLzMXVpqpK0Q",
             tech: ["Python", "scikit-learn", "Pandas","NumPy"]
-        },/*
+        },
+        /*
         {
             title: "ML Model Deployment",
             description: "Production-ready ML serving infrastructure",
