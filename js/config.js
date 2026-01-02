@@ -4,7 +4,7 @@ const portfolioConfig = {
     email: "shivamyadav00209@gmail.com",
     linkedin: "https://www.linkedin.com/in/shivamyadav-dev/",
     github: "https://github.com/shivamyadav-dev",
-    resumeUrl: "assets/SHIVAM_RESUME.pdf",
+    resumeUrl: "assets/SHIVAM_KUMAR_YADAV_Resume_01.pdf",
     tagline: "Turning Data into Intelligent and Autonomous Action",
     hero: {
         titles: [
@@ -65,14 +65,14 @@ const portfolioConfig = {
             title: "Enterprise Contract Intelligence Platform | LegalTech",
             description: "RAG-powered legal AI reducing M&A contract review from 4+ hours to 2 minutes with 95%+ accuracy using LangChain, ChromaDB, and cited clause extraction",
             github: "https://github.com/shivamyadav-dev/AskMyDocs",
-            demo: "https://www.linkedin.com/posts/shivamyadav-dev_machinelearning-nlp-sentimentanalysis-ugcPost-7398663117469114368-16kg?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtWArIBeVY85WeieS8NmNOSLzMXVpqpK0Q",
+            demo: "https://www.linkedin.com/posts/shivamyadav-dev_rag-genai-aiengineering-activity-7411265987221741568-VPhK?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtWArIBeVY85WeieS8NmNOSLzMXVpqpK0Q",
             tech: ["RAG Systems", "LangChain", "ChromaDB", "LLaMA-3", "Production NLP"]
         },
         {
             title: "Strategic Intelligence Automation System | Market Research",
             description: "Multi-agent platform automating competitive intelligence 96x faster—LangGraph orchestration transforms 8-12 hour research into 5-minute strategic reports",
             github: "https://github.com/shivamyadav-dev/Atlas-Research-Assistant",
-            demo: "https://www.linkedin.com/posts/shivamyadav-dev_machinelearning-nlp-sentimentanalysis-ugcPost-7398663117469114368-16kg?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtWArIBeVY85WeieS8NmNOSLzMXVpqpK0Q",
+            demo: "https://www.linkedin.com/posts/shivamyadav-dev_genai-aiengineering-agenticai-activity-7412353147970613248--hjo?utm_source=share&utm_medium=member_desktop&rcm=ACoAADtWArIBeVY85WeieS8NmNOSLzMXVpqpK0Q",
             tech: ["Multi-Agent AI", "LangGraph", "Gemini 2.0", "Autonomous Workflows"]
         },
         {
